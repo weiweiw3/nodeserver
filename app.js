@@ -11,13 +11,15 @@ var users = require('./routes/users');
 var conf = require('./config'),
     fbutil = require('./lib/fbutil'),
     PathMonitor = require('./lib/PathMonitor'),
+    TaskMonitor = require('./lib/TaskMonitor'),
     SearchQueue = require('./lib/SearchQueue');
 
 var app = express();
 
 fbutil.auth(conf.FB_URL, conf.FB_TOKEN).done(function() {
-   PathMonitor.process(conf.FB_URL, conf.paths, conf.FB_PATH);
-   SearchQueue.init( conf.FB_URL, conf.FB_REQ, conf.FB_RES, conf.CLEANUP_INTERVAL);
+    // PathMonitor.process(conf.FB_URL, conf.paths, conf.FB_PATH);
+    TaskMonitor.process(conf.FB_URL, conf.taskpaths, conf.FB_PATH);
+    SearchQueue.init(conf.FB_URL, conf.FB_REQ, conf.FB_RES, conf.CLEANUP_INTERVAL);
 });
 
 // view engine setup

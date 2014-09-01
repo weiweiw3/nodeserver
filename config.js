@@ -64,7 +64,15 @@ exports.FB_RES   = process.env.FB_RES || 'search/response';
  * Format each path object with the same keys described above, and store the array of paths at whatever
  * location you specified in the FB_PATHS variable. Be sure to restrict that data in your Security Rules.
  ****************************************************/
-
+exports.taskpaths = [
+ 
+   {
+      path:  "tasks",
+      index: "public",
+      type:  "task"
+      
+   }
+];
 exports.paths = [
    
   
