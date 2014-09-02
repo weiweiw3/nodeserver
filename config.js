@@ -11,7 +11,7 @@
 
 // Your Firebase instance where we will listen and write search results
 process.env.FB_NAME = 't1wang';
-exports.FB_URL   = 'https://' + process.env.FB_NAME + '.firebaseio.com/';
+exports.FB_URL = 'https://' + process.env.FB_NAME + '.firebaseio.com/';
 // exports.FB_URL   = 'https://t1wang.firebaseio.com/';
 
 
@@ -22,10 +22,10 @@ exports.FB_URL   = 'https://' + process.env.FB_NAME + '.firebaseio.com/';
 exports.FB_TOKEN = 'GdUxBdigGxLq69qT9zgje3o9vVDDp8PTwWNli3XU';
 
 // The path in your Firebase where clients will write search requests
-exports.FB_REQ   = process.env.FB_REQ || 'search/request';
+exports.FB_REQ = process.env.FB_REQ || 'search/request';
 
 // The path in your Firebase where this app will write the results
-exports.FB_RES   = process.env.FB_RES || 'search/response';
+exports.FB_RES = process.env.FB_RES || 'search/response';
 
 // /** ElasticSearch Settings
 //  *********************************************/
@@ -65,44 +65,67 @@ exports.FB_RES   = process.env.FB_RES || 'search/response';
  * location you specified in the FB_PATHS variable. Be sure to restrict that data in your Security Rules.
  ****************************************************/
 exports.taskpaths = [
- 
+
    {
-      path:  "tasks",
+      path: "tasks",
       index: "public",
-      type:  "task"
-      
+      type: "task"
+
    }
 ];
 exports.paths = [
-   
-  
+
+
    // {
    //    path:  "users",
    //    index: "private",
    //    type:  "user"
    // },
    {
-      path:  "messages",
+      path: "messages",
       index: "public",
-      type:  "message"
-      // ,
-      // fields: ['msg', 'name'],
-      // filter: function(data) { return data.name !== 'system'; }
+      type: "message"
+         // ,
+         // fields: ['msg', 'name'],
+         // filter: function(data) { return data.name !== 'system'; }
    }
 ];
 
 // Paths can also be stored in Firebase and loaded using FB_PATHS!
 exports.FB_PATH = process.env.FB_PATHS || null;
 
+/**
+ *REST Service
+ */
+
+exports.RESTUrl = {
+
+   host: '121.40.128.254',
+   port: '8080',
+   root_path: '/data-app/rs/task',
+   create_path: function() {
+      return this.root_path + '/createTask'
+   },
+   update_path: function() {
+      return this.root_path + '/updateTask'
+   },
+   search_path: function() {
+      return this.root_path + '/searchBy?'
+   },
+   delete_path: function() {
+      return this.root_path + '/deleteTask?'
+   }
+
+};
 
 /** Config Options
  ***************************************************/
 
 // How often should the script remove unclaimed search results? probably just leave this alone
 exports.CLEANUP_INTERVAL =
-   process.env.NODE_ENV === 'production'?
-      3600*1000 /* once an hour */ :
-      60*1000 /* once a minute */;
+   process.env.NODE_ENV === 'production' ?
+   3600 * 1000 /* once an hour */ :
+   60 * 1000 /* once a minute */ ;
 
 function processBonsaiUrl(exports, url) {
    var matches = url.match(/^https?:\/\/([^:]+):([^@]+)@([^/]+)\/?$/);
