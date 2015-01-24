@@ -10,7 +10,7 @@
  ***************************************************/
 
 // Your Firebase instance where we will listen and write search results
-process.env.FB_NAME = 't1wang';
+process.env.FB_NAME = 'e-commerce';
 exports.FB_URL = 'https://' + process.env.FB_NAME + '.firebaseio.com/';
 // exports.FB_URL   = 'https://t1wang.firebaseio.com/';
 
@@ -19,7 +19,7 @@ exports.FB_URL = 'https://' + process.env.FB_NAME + '.firebaseio.com/';
 // To Firebase and access search data.
 //exports.FB_TOKEN = process.env.FB_TOKEN || null;
 
-exports.FB_TOKEN = 'GdUxBdigGxLq69qT9zgje3o9vVDDp8PTwWNli3XU';
+exports.FB_TOKEN = 'JgXqHZWb8d9QsXMfNAvLOTtKvluRx6XLCsOOPKwG';
 
 // The path in your Firebase where clients will write search requests
 exports.FB_REQ = process.env.FB_REQ || 'search/request';
@@ -82,7 +82,7 @@ exports.paths = [
    //    type:  "user"
    // },
    {
-      path: "messages",
+      path: "Event/E0001", //root menu of events
       index: "public",
       type: "message"
          // ,
