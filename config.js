@@ -100,7 +100,7 @@ exports.FB_PATH = process.env.FB_PATHS || null;
 
 exports.RESTUrl = {
 
-   host: '121.40.128.254',
+   host: '114.215.185.243',
    port: '8080',
    root_path: '/data-app/rs/task',
    create_path: function() {
