@@ -10,16 +10,17 @@
  ***************************************************/
 
 // Your Firebase instance where we will listen and write search results
-process.env.FB_NAME = 'e-commerce';
+//40288b8147cd16ce0147cd236df20000 is company_guid
+process.env.FB_NAME = '40288b8147cd16ce0147cd236df20000';
 exports.FB_URL = 'https://' + process.env.FB_NAME + '.firebaseio.com/';
-// exports.FB_URL   = 'https://t1wang.firebaseio.com/';
+// exports.FB_URL   = 'https://40288b8147cd16ce0147cd236df20000.firebaseio.com/';
 
 
 // Either your Firebase secret or a token you create with no expiry, used to authenticate
 // To Firebase and access search data.
 //exports.FB_TOKEN = process.env.FB_TOKEN || null;
 
-exports.FB_TOKEN = 'JgXqHZWb8d9QsXMfNAvLOTtKvluRx6XLCsOOPKwG';
+exports.FB_TOKEN = 'kMQCLdcQSw7gijFvsSO97XNJuJd437i0iEwmphQA';
 
 // The path in your Firebase where clients will write search requests
 exports.FB_REQ = process.env.FB_REQ || 'search/request';
