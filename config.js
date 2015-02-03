@@ -85,7 +85,17 @@ exports.paths = [
    {
       path: "Event/E0001", //root menu of events
       index: "public",
-      type: "message"
+      type: "message",
+      usermappingRoot:"UserList",
+      messageRoot:"Event",
+      userRoot:"users",
+      usermapping_FBuser_field:"FBUser",
+      //UserList/100004/FBUser
+      
+      user_message_field:"messages"
+      // users/simplelogin%3A27/messages/E0001
+      
+      
          // ,
          // fields: ['msg', 'name'],
          // filter: function(data) { return data.name !== 'system'; }
