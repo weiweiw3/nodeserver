@@ -92,11 +92,15 @@ exports.paths = [
       usermapping_FBuser_field:"FBUser",
       //UserList/100004/FBUser
       
-      user_message_field:"messages"
+      user_message_field:"messages",
       // users/simplelogin%3A27/messages/E0001
       
+      user_component_field:"components",
+      // users/simplelogin%3A27/components/E0001
       
-         // ,
+      po_release_group_field:"release_group"   
+      //users/simplelogin%3A25/messages/E0001/4500017496/release_group:02_PU   
+         
          // fields: ['msg', 'name'],
          // filter: function(data) { return data.name !== 'system'; }
    }
