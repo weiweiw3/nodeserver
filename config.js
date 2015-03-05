@@ -95,8 +95,8 @@ exports.paths = [
       user_message_field:"messages",
       // users/simplelogin%3A27/messages/E0001
       
-      user_messageMetadata_field:"messageMetadata",
-      // users/simplelogin%3A27/messages/E0001
+      user_messageMetadata_field:"data/messageMetadata",
+      // users/simplelogin%3A27/messages/E0001/messageId/data/messageMetadata
       
       user_component_field:"components",
       // users/simplelogin%3A27/components/E0001
