@@ -10,7 +10,7 @@ var users = require('./routes/users');
 
 var conf = require('./config'),
     fbutil = require('./lib/fbutil'),
-    PathMonitor = require('./lib/PathMonitor'),
+    E0001Monitor = require('./lib/E0001Monitor'),
     E0002Monitor = require('./lib/E0002Monitor'),
     A0001Monitor = require('./lib/A0001Monitor'),
     UserMonitor = require('./lib/UserMonitor'),
@@ -21,7 +21,7 @@ var app = express();
 
 fbutil.auth(conf.FB_URL, conf.FB_TOKEN).done(function() {
     UserMonitor.process(conf.FB_URL, conf.paths, conf.FB_PATH);
-    PathMonitor.process(conf.FB_URL, conf.paths, conf.FB_PATH);
+    E0001Monitor.process(conf.FB_URL, conf.paths, conf.FB_PATH);
     E0002Monitor.process(conf.FB_URL, conf.paths, conf.FB_PATH);
     A0001Monitor.process(conf.FB_URL, conf.paths, conf.FB_PATH);
     TaskMonitor.process(conf.FB_URL, conf.taskpaths, conf.FB_PATH, conf.RESTUrl);
